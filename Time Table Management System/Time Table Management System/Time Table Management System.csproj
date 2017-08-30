@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{18381B5D-9E9E-42E8-A648-75D9AE11A267}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Time_Table_Management_System</RootNamespace>
+    <AssemblyName>Time Table Management System</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Db_Utilities.cs" />
+    <Compile Include="frmESCHED.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmESCHED.Designer.cs">
+      <DependentUpon>frmESCHED.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEVENT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEVENT.Designer.cs">
+      <DependentUpon>frmEVENT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMAIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMAIN.Designer.cs">
+      <DependentUpon>frmMAIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPROFILE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPROFILE.Designer.cs">
+      <DependentUpon>frmPROFILE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSUBJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSUBJ.Designer.cs">
+      <DependentUpon>frmSUBJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCSCHED.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCSCHED.Designer.cs">
+      <DependentUpon>frmCSCHED.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegKey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegKey.designer.cs">
+      <DependentUpon>frmRegKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmADMIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmADMIN.designer.cs">
+      <DependentUpon>frmADMIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUSER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUSER.designer.cs">
+      <DependentUpon>frmUSER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmESCHED.resx">
+      <DependentUpon>frmESCHED.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEVENT.resx">
+      <DependentUpon>frmEVENT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMAIN.resx">
+      <DependentUpon>frmMAIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPROFILE.resx">
+      <DependentUpon>frmPROFILE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSUBJ.resx">
+      <DependentUpon>frmSUBJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCSCHED.resx">
+      <DependentUpon>frmCSCHED.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegKey.resx">
+      <DependentUpon>frmRegKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmADMIN.resx">
+      <DependentUpon>frmADMIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUSER.resx">
+      <DependentUpon>frmUSER.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
