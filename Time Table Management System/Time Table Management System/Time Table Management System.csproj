@@ -52,12 +52,6 @@
     <Compile Include="frmESCHED.Designer.cs">
       <DependentUpon>frmESCHED.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEVENT.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmEVENT.Designer.cs">
-      <DependentUpon>frmEVENT.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmMAIN.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,11 +64,11 @@
     <Compile Include="frmPROFILE.Designer.cs">
       <DependentUpon>frmPROFILE.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSUBJ.cs">
+    <Compile Include="frmTITLE.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSUBJ.Designer.cs">
-      <DependentUpon>frmSUBJ.cs</DependentUpon>
+    <Compile Include="frmTITLE.Designer.cs">
+      <DependentUpon>frmTITLE.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCSCHED.cs">
       <SubType>Form</SubType>
@@ -105,17 +99,14 @@
     <EmbeddedResource Include="frmESCHED.resx">
       <DependentUpon>frmESCHED.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEVENT.resx">
-      <DependentUpon>frmEVENT.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmMAIN.resx">
       <DependentUpon>frmMAIN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPROFILE.resx">
       <DependentUpon>frmPROFILE.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSUBJ.resx">
-      <DependentUpon>frmSUBJ.cs</DependentUpon>
+    <EmbeddedResource Include="frmTITLE.resx">
+      <DependentUpon>frmTITLE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCSCHED.resx">
       <DependentUpon>frmCSCHED.cs</DependentUpon>

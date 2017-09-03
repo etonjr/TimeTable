@@ -31,14 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCSCHED));
             this.tsmSAVE = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbSubj = new System.Windows.Forms.ComboBox();
             this.cmbDay = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dtpFTime = new System.Windows.Forms.DateTimePicker();
-            this.lblTimestarted = new System.Windows.Forms.Label();
+            this.lblTPeriod = new System.Windows.Forms.Label();
             this.dtpSTime = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.cmbSUBJ = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSEC = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
@@ -71,14 +71,14 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.cmbSubj);
             this.groupBox1.Controls.Add(this.cmbDay);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.dtpFTime);
-            this.groupBox1.Controls.Add(this.lblTimestarted);
+            this.groupBox1.Controls.Add(this.lblTPeriod);
             this.groupBox1.Controls.Add(this.dtpSTime);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.cmbSUBJ);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtSEC);
             this.groupBox1.Controls.Add(this.label19);
@@ -92,14 +92,29 @@
             this.groupBox1.TabIndex = 139;
             this.groupBox1.TabStop = false;
             // 
+            // cmbSubj
+            // 
+            this.cmbSubj.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.cmbSubj.Font = new System.Drawing.Font("Broadway", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSubj.ForeColor = System.Drawing.SystemColors.Control;
+            this.cmbSubj.FormattingEnabled = true;
+            this.cmbSubj.Location = new System.Drawing.Point(105, 139);
+            this.cmbSubj.Name = "cmbSubj";
+            this.cmbSubj.Size = new System.Drawing.Size(202, 30);
+            this.cmbSubj.TabIndex = 152;
+            this.cmbSubj.DropDown += new System.EventHandler(this.cmbSubj_DropDown);
+            this.cmbSubj.SelectedIndexChanged += new System.EventHandler(this.cmbSubj_SelectedIndexChanged);
+            this.cmbSubj.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbDay_KeyPress);
+            // 
             // cmbDay
             // 
-            this.cmbDay.BackColor = System.Drawing.Color.Tan;
-            this.cmbDay.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbDay.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.cmbDay.Font = new System.Drawing.Font("Broadway", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbDay.ForeColor = System.Drawing.SystemColors.Control;
             this.cmbDay.FormattingEnabled = true;
-            this.cmbDay.Location = new System.Drawing.Point(105, 30);
+            this.cmbDay.Location = new System.Drawing.Point(105, 28);
             this.cmbDay.Name = "cmbDay";
-            this.cmbDay.Size = new System.Drawing.Size(143, 23);
+            this.cmbDay.Size = new System.Drawing.Size(202, 30);
             this.cmbDay.TabIndex = 151;
             this.cmbDay.DropDown += new System.EventHandler(this.cmbDay_DropDown);
             this.cmbDay.SelectedIndexChanged += new System.EventHandler(this.cmbDay_SelectedIndexChanged);
@@ -129,17 +144,17 @@
             this.dtpFTime.TabIndex = 147;
             this.dtpFTime.Value = new System.DateTime(2017, 6, 28, 0, 0, 0, 0);
             // 
-            // lblTimestarted
+            // lblTPeriod
             // 
-            this.lblTimestarted.AutoSize = true;
-            this.lblTimestarted.BackColor = System.Drawing.Color.Transparent;
-            this.lblTimestarted.Font = new System.Drawing.Font("Papyrus", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTimestarted.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblTimestarted.Location = new System.Drawing.Point(31, 69);
-            this.lblTimestarted.Name = "lblTimestarted";
-            this.lblTimestarted.Size = new System.Drawing.Size(124, 21);
-            this.lblTimestarted.TabIndex = 144;
-            this.lblTimestarted.Text = "Time  /  Period :";
+            this.lblTPeriod.AutoSize = true;
+            this.lblTPeriod.BackColor = System.Drawing.Color.Transparent;
+            this.lblTPeriod.Font = new System.Drawing.Font("Papyrus", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTPeriod.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblTPeriod.Location = new System.Drawing.Point(31, 69);
+            this.lblTPeriod.Name = "lblTPeriod";
+            this.lblTPeriod.Size = new System.Drawing.Size(124, 21);
+            this.lblTPeriod.TabIndex = 144;
+            this.lblTPeriod.Text = "Time  /  Period :";
             // 
             // dtpSTime
             // 
@@ -177,19 +192,6 @@
             this.label4.Size = new System.Drawing.Size(58, 21);
             this.label4.TabIndex = 134;
             this.label4.Text = "Room :";
-            // 
-            // cmbSUBJ
-            // 
-            this.cmbSUBJ.BackColor = System.Drawing.Color.Tan;
-            this.cmbSUBJ.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSUBJ.FormattingEnabled = true;
-            this.cmbSUBJ.Location = new System.Drawing.Point(111, 144);
-            this.cmbSUBJ.Name = "cmbSUBJ";
-            this.cmbSUBJ.Size = new System.Drawing.Size(196, 23);
-            this.cmbSUBJ.TabIndex = 129;
-            this.cmbSUBJ.DropDown += new System.EventHandler(this.cmbSUBJ_DropDown);
-            this.cmbSUBJ.SelectedIndexChanged += new System.EventHandler(this.cmbSUBJ_SelectedIndexChanged);
-            this.cmbSUBJ.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbDay_KeyPress);
             // 
             // label1
             // 
@@ -339,6 +341,7 @@
             this.Controls.Add(this.tsmTITLE);
             this.Controls.Add(this.dgvSample);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(90, 250);
             this.Name = "frmCSCHED";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
@@ -362,7 +365,6 @@
         private System.Windows.Forms.TextBox txtROOM;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cmbSUBJ;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSEC;
         private System.Windows.Forms.Label label19;
@@ -374,9 +376,10 @@
         private System.Windows.Forms.ToolStrip tsmTITLE;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dtpFTime;
-        private System.Windows.Forms.Label lblTimestarted;
+        private System.Windows.Forms.Label lblTPeriod;
         private System.Windows.Forms.DateTimePicker dtpSTime;
         private System.Windows.Forms.ComboBox cmbDay;
         private System.Windows.Forms.DataGridView dgvSample;
+        private System.Windows.Forms.ComboBox cmbSubj;
     }
 }

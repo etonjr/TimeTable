@@ -19,7 +19,7 @@ namespace Time_Table_Management_System
         MySqlDataAdapter ad;
         DataTable ss;
 
-        private string wkDays, uID, subjID, subjN, cschedID, dDay, dSTime, dFTime, db_stime;
+        private string wkDays, uID, subjID, subjN, cschedID, dDay, dSTime, dFTime, cmb;
         public frmCSCHED()
         {
             InitializeComponent();
@@ -44,9 +44,26 @@ namespace Time_Table_Management_System
             }
             r.Close();
             db.CloseConnection();
-            cmbSUBJ.Text = subjN;
+            cmbSubj.Text = frmMAIN.csubjN;
+            subjID = frmMAIN.csubjID;
+            subjN = frmMAIN.csubjN;
             tsmSAVE.Text = "Update";            
         }
+        private void PopulateSUBJ()
+        {
+            cmbSubj.Text = "";
+            cmbSubj.Items.Clear();
+            subjID = "0";
+            string query = "SELECT subjname FROM tbl_subj WHERE uid_idfku = '" + uID + "' ORDER BY subjname";
+            cmd = new MySqlCommand(query, db.OpenConnection());
+            MySqlDataReader r = cmd.ExecuteReader();
+            while (r.Read())
+            {
+                cmbSubj.Items.Add(r["subjname"].ToString());
+            }
+            r.Close();
+            db.CloseConnection();
+        } 
         private void populateDay()
         {
             cmbDay.Text = "";
@@ -55,32 +72,13 @@ namespace Time_Table_Management_System
             cmbDay.Items.Add("Sunday"); cmbDay.Items.Add("Monday"); cmbDay.Items.Add("Tuesday"); cmbDay.Items.Add("Wednesday");
             cmbDay.Items.Add("Thursday"); cmbDay.Items.Add("Friday"); cmbDay.Items.Add("Saturday");
         }
-
-        private void PopulateSUBJ()
-        {
-            cmbSUBJ.Text = "";
-            cmbSUBJ.Items.Clear();
-            subjID = "0";
-            string query = "SELECT subjname FROM tbl_subj WHERE uid_idfku = '" + uID + "' ORDER BY subjname";
-            cmd = new MySqlCommand(query, db.OpenConnection());
-            MySqlDataReader r = cmd.ExecuteReader();
-            while (r.Read())
-            {
-                cmbSUBJ.Items.Add(r["subjname"].ToString());
-            }
-            r.Close();
-            db.CloseConnection();
-        }
         private void frmSCHED_Load(object sender, EventArgs e)
         {
-            uID = frmUSER.uID;
-            subjID = frmMAIN.subjID;
-            subjN = frmMAIN.subjN;
-            cschedID = frmMAIN.cschedID;
+            uID = frmUSER.uID; subjID = frmMAIN.subjID; subjN = frmMAIN.subjN; cschedID = frmMAIN.cschedID;            
             if (cschedID != "") { loadDATA(); }
             else
             {
-                tsmSAVE.Text = "Save";
+                tsmSAVE.Text = "Save"; cmbSubj.Text = subjN;
                 dtpSTime.Value = DateTime.Now;
                 dtpFTime.Value = DateTime.Now;
                 dtpSTime.Text = DateTime.Now.ToString("hh:mm tt");
@@ -103,14 +101,14 @@ namespace Time_Table_Management_System
             else { wkDays = ""; }
         }
 
-        private void cmbSUBJ_DropDown(object sender, EventArgs e)
+        private void cmbSubj_DropDown(object sender, EventArgs e)
         {
-            if (cmbSUBJ.Items.Count >= 0) { PopulateSUBJ(); }
+            if (cmbSubj.Items.Count >= 0) { PopulateSUBJ(); }
             else { MessageBox.Show("Subject List is Empty.", "No Records Found", MessageBoxButtons.OK, MessageBoxIcon.Information); }
         }
-        private void cmbSUBJ_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbSubj_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string query = "SELECT * FROM tbl_subj WHERE subjname = '" + cmbSUBJ.Text + "'";
+            string query = "SELECT * FROM tbl_subj WHERE subjname = '" + cmbSubj.Text + "'";
             cmd = new MySqlCommand(query, db.OpenConnection());
             MySqlDataReader r = cmd.ExecuteReader();
             while (r.Read())
@@ -120,7 +118,6 @@ namespace Time_Table_Management_System
             r.Close();
             db.CloseConnection();
         }
-       
         private void chkTimeLaps()
         {
             int i = 0;
@@ -158,7 +155,18 @@ namespace Time_Table_Management_System
             }
             finally
             {
-                if (sum == 0)
+                string query = "SELECT esdate FROM tbl_esched WHERE (estime = '" + dtpSTime.Value.ToString("HH:mm") + "' OR eftime = '" + dtpFTime.Value.ToString("HH:mm") + "') AND user_idfke ='" + uID + "'";
+                cmd = new MySqlCommand(query, db.OpenConnection());
+                MySqlDataReader r = cmd.ExecuteReader();
+                while (r.Read()) { cmb = Convert.ToDateTime(r["esdate"].ToString()).ToString("dddd"); }
+                r.Close();
+                db.CloseConnection();
+                if (cmb == cmbDay.Text)
+                {
+                    MessageBox.Show("This schedule conflicts other schedule that is set in the event list.\n Please check again input information.", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    cmb = "";
+                }
+                else if (sum == 0)
                 {
                     if (tsmSAVE.Text == "Save") { saveSCHED(); }
                     else if (tsmSAVE.Text == "Update") { updateSCHED(); }
@@ -195,20 +203,20 @@ namespace Time_Table_Management_System
                 {
                     if (tsmSAVE.Text == "Update")
                     {
-                        if (cmbSUBJ.Text != subjN)
-                        {                            
+                        if (cmbSubj.Text != subjN)
+                        {
                             ad = new MySqlDataAdapter("SELECT * FROM tbl_csched WHERE day = '" + cmbDay.Text + "' AND time = '" + dtpSTime.Value.ToString("hh:mm tt") + " - " + dtpFTime.Value.ToString("hh:mm tt") + "' AND subj_idfksc = '" + subjID + "' AND user_idfksc = '" + uID + "'", db.OpenConnection());
                             ss = new DataTable();
                             ad.Fill(ss);
                             int i = ss.Rows.Count;
                             if (i > 0)
                             {
-                                MessageBox.Show("There is already a schedule set for this subject( " + cmbSUBJ.Text + " ).\n Please check again input information.", "Information Already Exist", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                MessageBox.Show("There is already a schedule set for this subject( " + cmbSubj.Text + " ).\n Please check again input information.", "Information Already Exist", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                 ss.Clear();
                             }
                             else { chkTimeLaps(); }
                         }
-                        else if (cmbSUBJ.Text == subjN)
+                        else if (cmbSubj.Text == subjN)
                         {
                             if (dtpSTime.Text + dtpFTime.Text == dSTime + dFTime && cmbDay.Text == dDay) { updateSCHED(); }
                             else
@@ -234,7 +242,7 @@ namespace Time_Table_Management_System
                         int i = ss.Rows.Count;
                         if (i > 0)
                         {
-                            MessageBox.Show("There is already a schedule set for this subject( " + cmbSUBJ.Text + " ).\n Please check again input information.", "Information Already Exist", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            MessageBox.Show("There is already a schedule set for this subject( " + cmbSubj.Text + " ).\n Please check again input information.", "Information Already Exist", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             ss.Clear();
                         }
                         else if (i == 0)
@@ -251,7 +259,6 @@ namespace Time_Table_Management_System
                             else { chkTimeLaps(); }
                         }
                     }
-                    else { MessageBox.Show("You can only create a schedule starting from TODAY's Date onwards. Please check again input information.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); }
                 }
             }
             else { MessageBox.Show("Please fill-up all the required information before saving.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); }
@@ -276,5 +283,9 @@ namespace Time_Table_Management_System
         {
             if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsControl(e.KeyChar)) { e.Handled = true; }
         }
+
+     
+
+      
     }
 }

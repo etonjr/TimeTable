@@ -29,58 +29,30 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmESCHED));
-            this.lblDSdate = new System.Windows.Forms.Label();
-            this.lblDTIMEF = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dtpFTime = new System.Windows.Forms.DateTimePicker();
-            this.lblDTIME = new System.Windows.Forms.Label();
             this.lblTimestarted = new System.Windows.Forms.Label();
             this.dtpSTime = new System.Windows.Forms.DateTimePicker();
-            this.lblSCHEDID = new System.Windows.Forms.Label();
-            this.lblSUBJID = new System.Windows.Forms.Label();
-            this.lblSUBJN = new System.Windows.Forms.Label();
-            this.lblUID = new System.Windows.Forms.Label();
-            this.cmbSUBJ = new System.Windows.Forms.ComboBox();
-            this.dtpSDate = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.txtPlace = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.dtpFDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpSDate = new System.Windows.Forms.DateTimePicker();
+            this.cmbEvent = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.lblDFdate = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.tsmTITLE = new System.Windows.Forms.ToolStrip();
             this.tsmUACCT = new System.Windows.Forms.ToolStripLabel();
             this.tsmSTAFFEXIT = new System.Windows.Forms.ToolStripButton();
             this.tsmSUBJ = new System.Windows.Forms.ToolStrip();
             this.tsmSAVE = new System.Windows.Forms.ToolStripButton();
+            this.dgvSample = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.tsmTITLE.SuspendLayout();
             this.tsmSUBJ.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSample)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblDSdate
-            // 
-            this.lblDSdate.AutoSize = true;
-            this.lblDSdate.Font = new System.Drawing.Font("Calibri", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDSdate.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblDSdate.Location = new System.Drawing.Point(133, 59);
-            this.lblDSdate.Name = "lblDSdate";
-            this.lblDSdate.Size = new System.Drawing.Size(0, 10);
-            this.lblDSdate.TabIndex = 150;
-            this.lblDSdate.Visible = false;
-            // 
-            // lblDTIMEF
-            // 
-            this.lblDTIMEF.AutoSize = true;
-            this.lblDTIMEF.Font = new System.Drawing.Font("Calibri", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDTIMEF.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblDTIMEF.Location = new System.Drawing.Point(242, 202);
-            this.lblDTIMEF.Name = "lblDTIMEF";
-            this.lblDTIMEF.Size = new System.Drawing.Size(0, 10);
-            this.lblDTIMEF.TabIndex = 149;
-            this.lblDTIMEF.Visible = false;
             // 
             // label5
             // 
@@ -106,17 +78,6 @@
             this.dtpFTime.TabIndex = 147;
             this.dtpFTime.Value = new System.DateTime(2017, 6, 28, 0, 0, 0, 0);
             // 
-            // lblDTIME
-            // 
-            this.lblDTIME.AutoSize = true;
-            this.lblDTIME.Font = new System.Drawing.Font("Calibri", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDTIME.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblDTIME.Location = new System.Drawing.Point(122, 202);
-            this.lblDTIME.Name = "lblDTIME";
-            this.lblDTIME.Size = new System.Drawing.Size(0, 10);
-            this.lblDTIME.TabIndex = 146;
-            this.lblDTIME.Visible = false;
-            // 
             // lblTimestarted
             // 
             this.lblTimestarted.AutoSize = true;
@@ -141,73 +102,6 @@
             this.dtpSTime.Size = new System.Drawing.Size(82, 23);
             this.dtpSTime.TabIndex = 145;
             this.dtpSTime.Value = new System.DateTime(2017, 6, 28, 0, 0, 0, 0);
-            // 
-            // lblSCHEDID
-            // 
-            this.lblSCHEDID.AutoSize = true;
-            this.lblSCHEDID.Font = new System.Drawing.Font("Calibri", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSCHEDID.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblSCHEDID.Location = new System.Drawing.Point(15, 268);
-            this.lblSCHEDID.Name = "lblSCHEDID";
-            this.lblSCHEDID.Size = new System.Drawing.Size(0, 10);
-            this.lblSCHEDID.TabIndex = 139;
-            this.lblSCHEDID.Visible = false;
-            // 
-            // lblSUBJID
-            // 
-            this.lblSUBJID.AutoSize = true;
-            this.lblSUBJID.Font = new System.Drawing.Font("Calibri", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSUBJID.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblSUBJID.Location = new System.Drawing.Point(15, 184);
-            this.lblSUBJID.Name = "lblSUBJID";
-            this.lblSUBJID.Size = new System.Drawing.Size(0, 10);
-            this.lblSUBJID.TabIndex = 138;
-            this.lblSUBJID.Visible = false;
-            // 
-            // lblSUBJN
-            // 
-            this.lblSUBJN.AutoSize = true;
-            this.lblSUBJN.Font = new System.Drawing.Font("Calibri", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSUBJN.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblSUBJN.Location = new System.Drawing.Point(126, 257);
-            this.lblSUBJN.Name = "lblSUBJN";
-            this.lblSUBJN.Size = new System.Drawing.Size(0, 10);
-            this.lblSUBJN.TabIndex = 137;
-            this.lblSUBJN.Visible = false;
-            // 
-            // lblUID
-            // 
-            this.lblUID.AutoSize = true;
-            this.lblUID.Font = new System.Drawing.Font("Calibri", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUID.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblUID.Location = new System.Drawing.Point(15, 59);
-            this.lblUID.Name = "lblUID";
-            this.lblUID.Size = new System.Drawing.Size(0, 10);
-            this.lblUID.TabIndex = 136;
-            this.lblUID.Visible = false;
-            // 
-            // cmbSUBJ
-            // 
-            this.cmbSUBJ.BackColor = System.Drawing.Color.Tan;
-            this.cmbSUBJ.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSUBJ.FormattingEnabled = true;
-            this.cmbSUBJ.Location = new System.Drawing.Point(119, 224);
-            this.cmbSUBJ.Name = "cmbSUBJ";
-            this.cmbSUBJ.Size = new System.Drawing.Size(196, 23);
-            this.cmbSUBJ.TabIndex = 129;
-            this.cmbSUBJ.DropDown += new System.EventHandler(this.cmbSUBJ_DropDown);
-            this.cmbSUBJ.SelectedIndexChanged += new System.EventHandler(this.cmbSUBJ_SelectedIndexChanged);
-            // 
-            // dtpSDate
-            // 
-            this.dtpSDate.CustomFormat = "MMM dd, yyyy - dddd";
-            this.dtpSDate.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpSDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpSDate.Location = new System.Drawing.Point(119, 29);
-            this.dtpSDate.Name = "dtpSDate";
-            this.dtpSDate.Size = new System.Drawing.Size(196, 23);
-            this.dtpSDate.TabIndex = 125;
-            this.dtpSDate.Value = new System.DateTime(2017, 6, 28, 0, 0, 0, 0);
             // 
             // label1
             // 
@@ -237,34 +131,28 @@
             // 
             // txtPlace
             // 
+            this.txtPlace.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPlace.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPlace.Location = new System.Drawing.Point(119, 280);
-            this.txtPlace.MaxLength = 1;
+            this.txtPlace.MaxLength = 20;
             this.txtPlace.Name = "txtPlace";
             this.txtPlace.Size = new System.Drawing.Size(196, 23);
             this.txtPlace.TabIndex = 132;
             this.txtPlace.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPlace.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPlace_KeyPress);
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.lblDFdate);
-            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.dtpFDate);
-            this.groupBox1.Controls.Add(this.lblDSdate);
-            this.groupBox1.Controls.Add(this.lblDTIMEF);
+            this.groupBox1.Controls.Add(this.dtpSDate);
+            this.groupBox1.Controls.Add(this.cmbEvent);
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.dtpFTime);
-            this.groupBox1.Controls.Add(this.lblDTIME);
             this.groupBox1.Controls.Add(this.lblTimestarted);
             this.groupBox1.Controls.Add(this.dtpSTime);
-            this.groupBox1.Controls.Add(this.lblSCHEDID);
-            this.groupBox1.Controls.Add(this.lblSUBJID);
-            this.groupBox1.Controls.Add(this.lblSUBJN);
-            this.groupBox1.Controls.Add(this.lblUID);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.cmbSUBJ);
-            this.groupBox1.Controls.Add(this.dtpSDate);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label19);
             this.groupBox1.Controls.Add(this.txtPlace);
@@ -275,27 +163,43 @@
             this.groupBox1.TabIndex = 142;
             this.groupBox1.TabStop = false;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Papyrus", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(21, 31);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 21);
-            this.label2.TabIndex = 124;
-            this.label2.Text = "Date Start:";
-            // 
             // dtpFDate
             // 
             this.dtpFDate.CustomFormat = "MMM dd, yyyy - dddd";
             this.dtpFDate.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFDate.Location = new System.Drawing.Point(119, 84);
+            this.dtpFDate.Location = new System.Drawing.Point(117, 83);
             this.dtpFDate.Name = "dtpFDate";
-            this.dtpFDate.Size = new System.Drawing.Size(196, 23);
-            this.dtpFDate.TabIndex = 151;
+            this.dtpFDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dtpFDate.Size = new System.Drawing.Size(198, 23);
+            this.dtpFDate.TabIndex = 155;
             this.dtpFDate.Value = new System.DateTime(2017, 6, 28, 0, 0, 0, 0);
+            // 
+            // dtpSDate
+            // 
+            this.dtpSDate.CustomFormat = "MMM dd, yyyy - dddd";
+            this.dtpSDate.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpSDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpSDate.Location = new System.Drawing.Point(119, 30);
+            this.dtpSDate.Name = "dtpSDate";
+            this.dtpSDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dtpSDate.Size = new System.Drawing.Size(198, 23);
+            this.dtpSDate.TabIndex = 154;
+            this.dtpSDate.Value = new System.DateTime(2017, 6, 28, 0, 0, 0, 0);
+            // 
+            // cmbEvent
+            // 
+            this.cmbEvent.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.cmbEvent.Font = new System.Drawing.Font("Broadway", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbEvent.ForeColor = System.Drawing.SystemColors.Control;
+            this.cmbEvent.FormattingEnabled = true;
+            this.cmbEvent.Location = new System.Drawing.Point(119, 218);
+            this.cmbEvent.Name = "cmbEvent";
+            this.cmbEvent.Size = new System.Drawing.Size(198, 30);
+            this.cmbEvent.TabIndex = 153;
+            this.cmbEvent.DropDown += new System.EventHandler(this.cmbEvent_DropDown);
+            this.cmbEvent.SelectedIndexChanged += new System.EventHandler(this.cmbEvent_SelectedIndexChanged);
+            this.cmbEvent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbEvent_KeyPress);
             // 
             // label6
             // 
@@ -308,16 +212,16 @@
             this.label6.TabIndex = 152;
             this.label6.Text = "Date Finish:";
             // 
-            // lblDFdate
+            // label2
             // 
-            this.lblDFdate.AutoSize = true;
-            this.lblDFdate.Font = new System.Drawing.Font("Calibri", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDFdate.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblDFdate.Location = new System.Drawing.Point(133, 113);
-            this.lblDFdate.Name = "lblDFdate";
-            this.lblDFdate.Size = new System.Drawing.Size(0, 10);
-            this.lblDFdate.TabIndex = 153;
-            this.lblDFdate.Visible = false;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Papyrus", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.Location = new System.Drawing.Point(21, 31);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(92, 21);
+            this.label2.TabIndex = 124;
+            this.label2.Text = "Date Start:";
             // 
             // tsmTITLE
             // 
@@ -385,7 +289,16 @@
             this.tsmSAVE.Text = "Save";
             this.tsmSAVE.Click += new System.EventHandler(this.tsmSAVE_Click);
             // 
-            // frmEvent
+            // dgvSample
+            // 
+            this.dgvSample.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSample.Location = new System.Drawing.Point(185, 56);
+            this.dgvSample.Name = "dgvSample";
+            this.dgvSample.Size = new System.Drawing.Size(10, 10);
+            this.dgvSample.TabIndex = 155;
+            this.dgvSample.Visible = false;
+            // 
+            // frmESCHED
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -396,9 +309,11 @@
             this.Controls.Add(this.tsmSUBJ);
             this.Controls.Add(this.tsmTITLE);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.dgvSample);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(90, 250);
-            this.Name = "frmEvent";
+            this.Name = "frmESCHED";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Load += new System.EventHandler(this.frmEvent_Load);
             this.groupBox1.ResumeLayout(false);
@@ -407,6 +322,7 @@
             this.tsmTITLE.PerformLayout();
             this.tsmSUBJ.ResumeLayout(false);
             this.tsmSUBJ.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSample)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -414,31 +330,24 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblDSdate;
-        private System.Windows.Forms.Label lblDTIMEF;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dtpFTime;
-        private System.Windows.Forms.Label lblDTIME;
         private System.Windows.Forms.Label lblTimestarted;
         private System.Windows.Forms.DateTimePicker dtpSTime;
-        private System.Windows.Forms.Label lblSCHEDID;
-        private System.Windows.Forms.Label lblSUBJID;
-        private System.Windows.Forms.Label lblSUBJN;
-        private System.Windows.Forms.Label lblUID;
-        private System.Windows.Forms.ComboBox cmbSUBJ;
-        private System.Windows.Forms.DateTimePicker dtpSDate;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txtPlace;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dtpFDate;
-        private System.Windows.Forms.Label lblDFdate;
         private System.Windows.Forms.ToolStrip tsmTITLE;
         private System.Windows.Forms.ToolStripLabel tsmUACCT;
         private System.Windows.Forms.ToolStripButton tsmSTAFFEXIT;
         private System.Windows.Forms.ToolStrip tsmSUBJ;
         private System.Windows.Forms.ToolStripButton tsmSAVE;
+        private System.Windows.Forms.DataGridView dgvSample;
+        private System.Windows.Forms.ComboBox cmbEvent;
+        private System.Windows.Forms.DateTimePicker dtpSDate;
+        private System.Windows.Forms.DateTimePicker dtpFDate;
     }
 }
